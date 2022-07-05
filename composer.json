@@ -1,0 +1,26 @@
+{
+    "name": "ferranmarlet/simple-php-skeleton",
+    "description": "Simple setup for php katas",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "authors": [
+        {
+            "email": "ferran.marlet@gmail.com",
+            "name": "ferranmarlet"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kata\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "./tests"
+        }
+    }
+}
