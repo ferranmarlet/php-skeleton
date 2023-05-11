@@ -1,0 +1,11 @@
+services:
+  server:
+    build:
+      context: docker/apache
+    container_name: php-skeleton
+    ports:
+      - 8123:80
+    volumes:
+      - .:/var/www/public
+    working_dir: /var/www/public
+version: '3.6'

@@ -1,23 +1,42 @@
-# PHP skeleton
+# Dockerized PHP skeleton
 
 PHP skeleton to realize simple katas
 
 # Dependencies
 
 You will need:
-- PHP installed on your system, or you can use [ my php sandbox ]( https://github.com/ferranmarlet/php_sandbox )
+- Docker and docker-compose installed on your system
+
+Also, If you want to manage composer dependencies from the host machine:
 - composer installed on your system, or composer.phar, both downloadable from [ this link ](https://getcomposer.org/download/)
 
 # Usage
 
-Clone the repository, and from the project root path, execute:
+To generate the image, run:
+```
+docker-compose up --build -d
+docker exec -it php-skeleton composer install
+```
 
+Once it's generated, to get the container up and running you only need to do:
 ```
-composer install
+docker-compose up -d
 ```
 
-To run the test suite, execute:
+If you want to stop the container:
+```
+docker-compose down
+```
 
+To launch the tests, run:
 ```
-php vendor/bin/phpunit tests
+docker exec -it php-skeleton vendor/bin/phpunit tests
 ```
+
+To log into the running container, run:
+```
+docker exec -it php-skeleton bash
+```
+
+You will find the contens of the project available from the host machine at: `http://localhost:8123`
+
