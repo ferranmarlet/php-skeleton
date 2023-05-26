@@ -14,28 +14,27 @@ Also, If you want to manage composer dependencies from the host machine:
 
 To generate the image, run:
 ```
-docker-compose up --build -d
-docker exec -it php-skeleton composer install
+make build
 ```
 
 Once it's generated, to get the container up and running you only need to do:
 ```
-docker-compose up -d
+make up
 ```
 
 If you want to stop the container:
 ```
-docker-compose down
+make down
 ```
 
 To launch the tests, run:
 ```
-docker exec -it php-skeleton vendor/bin/phpunit tests
+make tests
 ```
 
 To log into the running container, run:
 ```
-docker exec -it php-skeleton bash
+make sh
 ```
 
 You will find the contens of the project available from the host machine at: `http://localhost:8123`
